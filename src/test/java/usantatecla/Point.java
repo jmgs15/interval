@@ -20,5 +20,10 @@ public class Point {
   double getGreater() {
     return this.value + Point.DEVIATION;
   }
+
+  @Override
+  public String toString() {
+    return this.value + "";
+  }
   
 }

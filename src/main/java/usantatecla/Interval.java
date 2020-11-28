@@ -1,8 +1,8 @@
 package usantatecla;
 
 public class Interval {
-
 	private Min min;
+
 	private Max max;
 
 	public Interval(Min min, Max max) {
@@ -13,6 +13,10 @@ public class Interval {
 
 	public boolean include(double value) {
 			return this.min.isWithin(value) && this.max.isWithin(value);
+	}
+
+	public boolean isIntersected(Interval intervalToCompare) {
+		return false;
 	}
 
 	@Override
@@ -49,6 +53,5 @@ public class Interval {
 	@Override
 	public String toString() {
 		return this.min.toString() + ", " + max.toString();
-	}	
-
+	}
 }
