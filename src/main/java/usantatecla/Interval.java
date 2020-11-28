@@ -24,15 +24,8 @@ public class Interval {
 	}
 
 	public boolean isIntersected(Interval intervalToCompare) {
-		boolean resultado = false;
-		if (this.include(intervalToCompare)) {
-			resultado = true;
-		} else if (intervalToCompare.include(this)) {
-			resultado = true;
-		} else if (isSameLimits(intervalToCompare)) {
-			resultado = true;
-		}
-		return resultado;
+		return this.include(intervalToCompare)|| intervalToCompare.include(this)
+				|| isSameLimits(intervalToCompare);
 	}
 
 	@Override
