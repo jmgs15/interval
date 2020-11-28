@@ -36,8 +36,8 @@ public class IntervalIntersectionTest {
                 { "This Interval contains rightToCompare", point(1), point(5), point(-1), point(3), true },
                 { "This Interval is in IntervalToCompare", point(3), point(5), point(1), point(8), true },
                 { "This Interval is in IntervalToCompare with same left", point(3), point(5), point(3), point(8), true },
-                { "This left Interval has same right IntervalToCompare", point(5), point(8), point(3), point(5), false },
-                { "This left and right Interval has same left and right IntervalToCompare", point(5), point(8), point(5), point(8), true }
+                { "This Interval's left has same IntervalToCompare's right", point(5), point(8), point(3), point(5), false },
+                { "This Interval's left and right has same IntervalToCompare's left and right", point(5), point(8), point(5), point(8), true }
         });
     }
 
