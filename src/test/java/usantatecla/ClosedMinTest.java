@@ -14,7 +14,7 @@ public class ClosedMinTest extends MinTest {
   @Test
   @Override
   public void givenMinWhenIsWithinWithEqualsValue(){
-    assertTrue(this.min.isWithin(this.point.getEquals()));
+    assertTrue(this.min.contains(this.point.getEquals()));
   }
   
 }
