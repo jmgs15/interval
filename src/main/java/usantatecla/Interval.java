@@ -16,7 +16,7 @@ public class Interval {
 	}
 
 	public boolean isIntersected(Interval intervalToCompare) {
-		return this.include(intervalToCompare.min.value);
+		return this.include(intervalToCompare.min.value) || this.include(intervalToCompare.max.value);
 	}
 
 	@Override
