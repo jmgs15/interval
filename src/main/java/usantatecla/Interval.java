@@ -11,12 +11,12 @@ public class Interval {
 		this.max = max;
 	}
 
-	public boolean include(double value) {
+	public boolean contains(double value) {
 			return this.min.contains(value) && this.max.contains(value);
 	}
 
-	public boolean include(Interval interval) {
-		return this.include(interval.min.value) || this.include(interval.max.value);
+	public boolean contains(Interval interval) {
+		return this.contains(interval.min.value) || this.contains(interval.max.value);
 	}
 
 	public boolean isSameLimits(Interval intervalToCompare) {
@@ -24,7 +24,7 @@ public class Interval {
 	}
 
 	public boolean isIntersected(Interval intervalToCompare) {
-		return this.include(intervalToCompare)|| intervalToCompare.include(this)
+		return this.contains(intervalToCompare)|| intervalToCompare.contains(this)
 				|| isSameLimits(intervalToCompare);
 	}
 
