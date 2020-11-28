@@ -15,11 +15,15 @@ public class Interval {
 			return this.min.isWithin(value) && this.max.isWithin(value);
 	}
 
+	public boolean include(Interval interval) {
+		return this.include(interval.min.value) || this.include(interval.max.value);
+	}
+
 	public boolean isIntersected(Interval intervalToCompare) {
 		boolean resultado = false;
-		if (this.include(intervalToCompare.min.value) || this.include(intervalToCompare.max.value)) {
+		if (this.include(intervalToCompare)) {
 			resultado = true;
-		} else if (intervalToCompare.include(this.min.value) || intervalToCompare.include(this.min.value)) {
+		} else if (intervalToCompare.include(this)) {
 			resultado = true;
 		}
 		return resultado;
