@@ -25,6 +25,8 @@ public class Interval {
 			resultado = true;
 		} else if (intervalToCompare.include(this)) {
 			resultado = true;
+		} else if (this.min.value == intervalToCompare.min.value || this.max.value == intervalToCompare.max.value) {
+			resultado = true;
 		}
 		return resultado;
 	}
