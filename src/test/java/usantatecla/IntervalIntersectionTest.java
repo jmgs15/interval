@@ -35,6 +35,7 @@ public class IntervalIntersectionTest {
     @Parameterized.Parameters(name = "(Test {0}: Interval({1}, {2}) | IntervalToCompare({3}, {4}")
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] {
+                { "This Interval is out of IntervalToCompare", point(1), point(5), point(6), point(8), false, false },
                 { "This Interval contains leftToCompare", point(1), point(5), point(2), point(8), true, true },
                 { "This Interval contains rightToCompare", point(1), point(5), point(-1), point(3), true, true },
                 { "This Interval is in IntervalToCompare", point(3), point(5), point(1), point(8), true, true },
