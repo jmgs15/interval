@@ -34,7 +34,8 @@ public class IntervalIntersectionTest {
         return Arrays.asList(new Object[][] {
                 { "This Interval contains leftToCompare", point(1), point(5), point(2), point(8), true },
                 { "This Interval contains rightToCompare", point(1), point(5), point(-1), point(3), true },
-                { "This Interval is in IntervalToCompare", point(3), point(5), point(1), point(8), true }
+                { "This Interval is in IntervalToCompare", point(3), point(5), point(1), point(8), true },
+                { "This Interval is in IntervalToCompare with same left", point(3), point(5), point(3), point(8), true }
         });
     }
 
