@@ -23,9 +23,9 @@ public class Interval {
 		return this.min.equals(interval.min) || this.max.equals(interval.max);
 	}
 
-	public boolean isIntersected(Interval intervalToCompare) {
-		return this.contains(intervalToCompare)|| intervalToCompare.contains(this)
-				|| isSameLimits(intervalToCompare);
+	public boolean isIntersected(Interval interval) {
+		return this.contains(interval)|| interval.contains(this)
+				|| isSameLimits(interval);
 	}
 
 	@Override
