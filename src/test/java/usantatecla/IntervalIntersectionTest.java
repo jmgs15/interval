@@ -35,13 +35,13 @@ public class IntervalIntersectionTest {
     @Parameterized.Parameters(name = "(Test {0}: Interval({1}, {2}) | IntervalToCompare({3}, {4}")
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] {
-                { "This Interval is out of IntervalToCompare", point(1), point(5), point(6), point(8), false, false },
-                { "This Interval contains leftToCompare", point(1), point(5), point(2), point(8), true, true },
-                { "This Interval contains rightToCompare", point(1), point(5), point(-1), point(3), true, true },
-                { "This Interval is in IntervalToCompare", point(3), point(5), point(1), point(8), true, true },
-                { "This Interval is in IntervalToCompare with same left", point(3), point(5), point(3), point(8), true, true },
-                { "This Interval's left has same IntervalToCompare's right", point(5), point(8), point(3), point(5), false, true },
-                { "This Interval's left and right has same IntervalToCompare's left and right", point(5), point(8), point(5), point(8), true, true }
+                { "This Interval is out of IntervalToCompare", left(1), right(5), left(6), right(8), false, false },
+                { "This Interval contains leftToCompare", left(1), right(5), left(2), right(8), true, true },
+                { "This Interval contains rightToCompare", left(1), right(5), left(-1), right(3), true, true },
+                { "This Interval is in IntervalToCompare", left(3), right(5), left(1), right(8), true, true },
+                { "This Interval is in IntervalToCompare with same left", left(3), right(5), left(3), right(8), true, true },
+                { "This Interval's left has same IntervalToCompare's right", left(5), right(8), left(3), right(5), false, true },
+                { "This Interval's left and right has same IntervalToCompare's left and right", left(5), right(8), left(5), right(8), true, true }
         });
     }
 
@@ -59,7 +59,11 @@ public class IntervalIntersectionTest {
         assertThat(interval.isIntersected(intervalToCompare), is(expectedIsIntersectedClose));
     }
 
-    private static Point point(double value) {
+    private static Point left(double value) {
+        return new Point(value);
+    }
+
+    private static Point right(double value) {
         return new Point(value);
     }
 }
