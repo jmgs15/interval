@@ -19,13 +19,17 @@ public class Interval {
 		return this.include(interval.min.value) || this.include(interval.max.value);
 	}
 
+	public boolean isSameLimits(Interval intervalToCompare) {
+		return this.min.equals(intervalToCompare.min) || this.max.equals(intervalToCompare.max);
+	}
+
 	public boolean isIntersected(Interval intervalToCompare) {
 		boolean resultado = false;
 		if (this.include(intervalToCompare)) {
 			resultado = true;
 		} else if (intervalToCompare.include(this)) {
 			resultado = true;
-		} else if (this.min.equals(intervalToCompare.min) || this.max.equals(intervalToCompare.max)) {
+		} else if (isSameLimits(intervalToCompare)) {
 			resultado = true;
 		}
 		return resultado;
